@@ -1,0 +1,17 @@
+<h2>How many letters do you want ?</h2>
+<form action="/longest_word/game" method="get">
+  <input type="text" name="grid_size" placeholder="ex : 7, 9, 12 ...">
+  <input type="submit">
+</form>
+
+<div id="grid">
+  <%= @grid %>
+</div>
+
+<h2>What's your best shot ?</h2>
+<form action="/longest_word/score" method="get">
+  <input type="text" name="attempt" placeholder="Guess it here">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+  <input type="submit">
+</form>
